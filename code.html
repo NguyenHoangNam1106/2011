@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 - Rạng Rỡ &amp; Yêu Thương</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Montserrat:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+    :root {
+      --primary-pink: #ff2a7a;
+      --soft-rose: #ff758c;
+      --glow-gold: #ffd166;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      user-select: none;
+      background: #0f051d;
+    }
+    .font-serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-handwriting {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    /* Ambient Romantic Background */
+    .hero-bg {
+      background: radial-gradient(circle at 50% 30%, #3b1035 0%, #200826 45%, #0b0213 100%);
+    }
+
+    /* Floating Animations */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-16px) rotate(2deg); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(18px) rotate(-2deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.2); }
+      50% { box-shadow: 0 0 35px rgba(255, 60, 150, 0.8), 0 0 50px rgba(255, 209, 102, 0.4), inset 0 0 25px rgba(255, 255, 255, 0.4); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .anim-float-1 { animation: floatSlow 5s ease-in-out infinite; }
+    .anim-float-2 { animation: floatReverse 6s ease-in-out infinite 0.5s; }
+    .anim-float-3 { animation: floatSlow 5.5s ease-in-out infinite 1s; }
+    .anim-float-4 { animation: floatReverse 6.5s ease-in-out infinite 1.5s; }
+    .anim-float-5 { animation: floatSlow 7s ease-in-out infinite 0.8s; }
+    .anim-float-6 { animation: floatReverse 5.8s ease-in-out infinite 2s; }
+    .anim-float-7 { animation: floatSlow 6.2s ease-in-out infinite 2.5s; }
+    .anim-float-8 { animation: floatReverse 6.6s ease-in-out infinite 1.8s; }
+    .anim-float-9 { animation: floatSlow 5.9s ease-in-out infinite 1.2s; }
+
+    /* Floating Keywords */
+    .bg-keyword {
+      position: absolute;
+      pointer-events: none;
+      font-family: 'Dancing Script', cursive;
+      color: rgba(255, 182, 193, 0.18);
+      font-size: 2.2rem;
+      white-space: nowrap;
+      filter: blur(0.5px);
+      z-index: 5;
+      animation: floatSlow 8s ease-in-out infinite;
+    }
+
+    /* Glassmorphism Name Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 192, 203, 0.8);
+      transform: translateY(-8px) scale(1.05);
+      animation: pulseGlow 2s infinite;
+      z-index: 40;
+    }
+
+    /* Text Gradient & Glow */
+    .text-glow-gold {
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 105, 180, 0.5);
+    }
+    .text-glow-pink {
+      text-shadow: 0 0 20px rgba(255, 42, 122, 0.8), 0 0 40px rgba(255, 105, 180, 0.5);
+    }
+
+    /* Ripple & Click Particle */
+    .click-particle {
+      position: absolute;
+      pointer-events: none;
+      animation: popFade 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+      z-index: 9999;
+    }
+    @keyframes popFade {
+      0% { transform: translate(-50%, -50%) scale(0.2) rotate(0deg); opacity: 1; }
+      100% { transform: translate(-50%, -50%) translateY(-60px) scale(1.5) rotate(45deg); opacity: 0; }
+    }
+
+    /* Modal Animation */
+    .modal-backdrop {
+      background: rgba(8, 2, 14, 0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Audio visualizer bar */
+    .bar {
+      transition: height 0.2s ease;
+    }
+  </style>
+</head>
+<body class="hero-bg text-white min-h-screen relative overflow-x-hidden">
+<!-- Interactive Click and Flower Fall Canvas -->
+<canvas class="fixed inset-0 pointer-events-none z-10" id="fallingCanvas"></canvas>
+<!-- Ambient Glow Orbs -->
+<div class="fixed top-1/4 left-1/4 w-96 h-96 rounded-full bg-pink-600/20 blur-[130px] pointer-events-none"></div>
+<div class="fixed bottom-1/4 right-1/4 w-[28rem] h-[28rem] rounded-full bg-purple-600/20 blur-[140px] pointer-events-none"></div>
+<div class="fixed top-1/2 right-10 w-72 h-72 rounded-full bg-rose-500/15 blur-[120px] pointer-events-none"></div>
+<!-- Music Controller Floating Badge -->
+<div class="fixed top-5 right-5 z-50 flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-full border border-pink-400/30 shadow-lg shadow-pink-500/10 hover:border-pink-400 transition-all">
+<div class="flex items-end gap-1 h-4 w-4" id="audioWaves">
+<span class="w-1 bg-pink-400 rounded-full h-2 bar animate-pulse"></span>
+<span class="w-1 bg-rose-300 rounded-full h-4 bar animate-pulse" style="animation-delay: 0.2s"></span>
+<span class="w-1 bg-amber-300 rounded-full h-3 bar animate-pulse" style="animation-delay: 0.4s"></span>
+</div>
+<button class="text-xs font-semibold tracking-wider flex items-center gap-2 hover:text-pink-300 transition-colors" id="musicToggleBtn">
+<i class="fa-solid fa-music text-pink-400" id="musicIcon"></i>
+<span id="musicLabel">BẬT NHẠC DU DƯƠNG</span>
+</button>
+</div>
+<!-- Background Floating Keywords (Scattered) -->
+<div class="bg-keyword top-12 left-8 md:left-24 text-pink-300/20">✨ Rạng rỡ</div>
+<div class="bg-keyword top-36 right-12 md:right-28 text-rose-300/20" style="animation-delay: 2s;">💖 Xinh đẹp</div>
+<div class="bg-keyword bottom-40 left-12 md:left-32 text-amber-200/20" style="animation-delay: 1.2s;">🌸 Hạnh phúc</div>
+<div class="bg-keyword bottom-24 right-16 md:right-36 text-purple-300/20" style="animation-delay: 3s;">💫 Thành công</div>
+<div class="bg-keyword top-1/2 left-6 text-pink-200/15" style="animation-delay: 4s;">💐 Yêu thương</div>
+<div class="bg-keyword top-2/3 right-8 text-rose-200/20" style="animation-delay: 1.8s;">🌹 20/10 Happy Women's Day</div>
+<!-- Main Container -->
+<div class="relative z-20 min-h-screen flex flex-col justify-between items-center px-4 py-10 md:py-14 max-w-7xl mx-auto">
+<!-- Header / Brand Notice -->
+<header class="text-center pt-2">
+<div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-pink-500/20 border border-pink-400/40 backdrop-blur-md mb-6 shadow-inner shadow-pink-500/20">
+<span class="text-pink-300 text-sm">✨</span>
+<span class="text-xs md:text-sm font-medium tracking-widest uppercase text-pink-200">Kỷ niệm Ngày Phụ nữ Việt Nam 20.10</span>
+<span class="text-pink-300 text-sm">✨</span>
+</div>
+<!-- Main Central Title with Neon & Typewriter -->
+<h1 class="font-serif-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-tight">
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-rose-300 to-amber-200 text-glow-pink">
+          CHÚC MỪNG NGÀY
+        </span>
+<br/>
+<span class="font-handwriting text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-300 to-amber-200 text-glow-gold block mt-2">
+          Phụ Nữ Việt Nam
+        </span>
+</h1>
+<div class="flex items-center justify-center gap-3 my-2 text-rose-300/80 font-handwriting text-2xl md:text-3xl">
+<span>—</span>
+<i class="fa-solid fa-heart text-pink-500 text-lg animate-ping"></i>
+<span>20 Tháng 10 Ngập Tràn Yêu Thương</span>
+<i class="fa-solid fa-heart text-pink-500 text-lg animate-ping"></i>
+<span>—</span>
+</div>
+<p class="max-w-2xl mx-auto text-pink-100/80 text-sm md:text-base font-light px-4 mt-2">
+        Dành tặng những bông hoa rạng ngời, tài năng và đáng yêu nhất. Hãy chạm vào từng thẻ tên để đón nhận thông điệp ngọt ngào dành riêng cho bạn!
+      </p>
+</header>
+<!-- 9 Special Women Floating 3D Cards Matrix (3x3 Grid on Desktop) -->
+<section class="w-full my-8 md:my-12">
+<div class="text-center mb-6">
+<span class="text-xs font-semibold uppercase tracking-widest text-pink-300/70 border-b border-pink-400/30 pb-1">
+          9 BÔNG HOA TỎA SÁNG
+        </span>
+</div>
+<!-- Balanced 3x3 Grid on Desktop, 2 columns on tablet, 1 column on mobile -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto px-2">
+<!-- 1. Bạch Lành -->
+<div class="glass-card anim-float-1 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Bạch Lành', '🌸 Nàng Thơ Thuần Khiết', 'Chúc Bạch Lành luôn giữ trọn nụ cười an yên, tâm hồn trong trẻo và trái tim ấm áp. Mong rằng mỗi bước đi của bạn trên con đường sắp tới đều ngập tràn hoa thơm, niềm vui và sự dịu dàng của thế giới này!', 'fa-spa', 'from-emerald-400 to-teal-500')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-pink-500/10 rounded-full blur-xl group-hover:bg-pink-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center text-pink-300 border border-pink-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-spa"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-pink-400/20 text-pink-200">#01</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-pink-300 transition-colors">Bạch Lành</h3>
+<p class="text-xs text-rose-300/80 mt-1 font-handwriting text-lg">Dịu dàng &amp; Thuần khiết</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 2. Phương Anh -->
+<div class="glass-card anim-float-2 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Phương Anh', '✨ Vẻ Đẹp Thông Minh &amp; Sắc Sảo', 'Chúc Phương Anh tuổi mới, ngày 20/10 luôn tràn đầy năng lượng rực rỡ, bản lĩnh kiên cường và gặt hái mọi thành công vang dội! Mong bạn luôn xinh đẹp, tự tin là phiên bản tuyệt vời nhất của chính mình.', 'fa-gem', 'from-amber-400 to-orange-500')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300 border border-amber-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-gem"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-200">#02</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-amber-300 transition-colors">Phương Anh</h3>
+<p class="text-xs text-amber-200/80 mt-1 font-handwriting text-lg">Tỏa sáng &amp; Tinh tế</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 3. Dương Cầm -->
+<div class="glass-card anim-float-3 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Dương Cầm', '🎶 Giai Điệu Ngọt Ngào', 'Chúc Dương Cầm luôn giữ được nét đẹp lãng mạn, thanh lịch như một khúc dương cầm êm dịu giữa đời. Chúc cuộc sống của bạn luôn tràn ngập nốt vui, vạn sự suôn sẻ và luôn có người đồng hành yêu thương hết mực!', 'fa-music', 'from-purple-400 to-pink-500')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-300 border border-purple-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-music"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-purple-400/20 text-purple-200">#03</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-purple-300 transition-colors">Dương Cầm</h3>
+<p class="text-xs text-purple-200/80 mt-1 font-handwriting text-lg">Thanh lịch &amp; Nghệ sĩ</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 4. Bảo Châu -->
+<div class="glass-card anim-float-4 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Bảo Châu', '💎 Viên Ngọc Quý Rạng Ngời', 'Chúc Bảo Châu luôn sáng lấp lánh như viên ngọc quý giá nhất. Hãy luôn được cưng chiều, yêu thương, gặp nhiều may mắn trong công việc và có một ngày 20/10 nhận được thật nhiều hoa, quà và nụ cười rạng rỡ!', 'fa-crown', 'from-rose-400 to-pink-600')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-rose-500/10 rounded-full blur-xl group-hover:bg-rose-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center text-rose-300 border border-rose-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-crown"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-rose-400/20 text-rose-200">#04</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-rose-300 transition-colors">Bảo Châu</h3>
+<p class="text-xs text-rose-200/80 mt-1 font-handwriting text-lg">Sang trọng &amp; Quý phái</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 5. Ly Na -->
+<div class="glass-card anim-float-5 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Ly Na', '🌺 Năng Động &amp; Đáng Yêu', 'Chúc Ly Na ngày 20/10 luôn tràn đầy nhiệt huyết, xinh tươi mơn mởn như đóa hoa đầu hạ. Mong bạn luôn tìm thấy niềm vui trong từng việc nhỏ nhất, thành công trong mọi dự định và luôn được chở che, nâng niu!', 'fa-sun', 'from-yellow-400 to-pink-500')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-yellow-500/10 rounded-full blur-xl group-hover:bg-yellow-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center text-yellow-300 border border-yellow-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-sun"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-yellow-400/20 text-yellow-200">#05</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-yellow-300 transition-colors">Ly Na</h3>
+<p class="text-xs text-yellow-200/80 mt-1 font-handwriting text-lg">Rạng rỡ &amp; Đáng yêu</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 6. Đinh Duyên -->
+<div class="glass-card anim-float-6 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Đinh Duyên', '🌿 Duyên Dáng &amp; Sâu Sắc', 'Chúc Đinh Duyên một ngày 20/10 trọn vẹn yêu thương! Chúc cho nét duyên dáng, thông tuệ và sự chu đáo của bạn luôn lan tỏa sự ấm áp đến mọi người. Mong may mắn và hạnh phúc lớn lao sẽ luôn mỉm cười với bạn!', 'fa-wand-magic-sparkles', 'from-teal-400 to-indigo-500')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-teal-500/10 rounded-full blur-xl group-hover:bg-teal-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-teal-500/20 flex items-center justify-center text-teal-300 border border-teal-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-teal-400/20 text-teal-200">#06</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-teal-300 transition-colors">Đinh Duyên</h3>
+<p class="text-xs text-teal-200/80 mt-1 font-handwriting text-lg">Duyên dáng &amp; Chân thành</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 7. Bảo Thy -->
+<div class="glass-card anim-float-7 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Bảo Thy', '🌷 Ngọt Ngào &amp; Tươi Tắn', 'Gửi lời chúc ấm áp nhất tới Bảo Thy! Chúc bạn mãi giữ nét vui tươi, nụ cười tỏa nắng và nguồn năng lượng tích cực này. Chúc cho mọi ước mơ của Bảo Thy đều sớm đơm hoa kết trái rạng rỡ!', 'fa-heart', 'from-pink-400 to-rose-600')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-pink-500/10 rounded-full blur-xl group-hover:bg-pink-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center text-pink-300 border border-pink-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-heart"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-pink-400/20 text-pink-200">#07</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-pink-300 transition-colors">Bảo Thy</h3>
+<p class="text-xs text-pink-200/80 mt-1 font-handwriting text-lg">Ngọt ngào &amp; Tươi vui</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 8. Huyền Trâm -->
+<div class="glass-card anim-float-8 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Huyền Trâm', '🌸 Duyên Dáng &amp; Tinh Khôi', 'Chúc Huyền Trâm luôn xinh đẹp rạng rỡ, ngập tràn niềm vui, tự tin sải bước và gặt hái thật nhiều thành công, hạnh phúc trong cuộc sống!', 'fa-star-half-stroke', 'from-fuchsia-400 to-rose-500')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-fuchsia-500/10 rounded-full blur-xl group-hover:bg-fuchsia-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-fuchsia-500/20 flex items-center justify-center text-fuchsia-300 border border-fuchsia-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-star-half-stroke"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-fuchsia-400/20 text-fuchsia-200">#08</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-fuchsia-300 transition-colors">Huyền Trâm</h3>
+<p class="text-xs text-fuchsia-200/80 mt-1 font-handwriting text-lg">Duyên dáng &amp; Tinh khôi</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+<!-- 9. Thảo Vy (Thành viên thứ 9) -->
+<div class="glass-card anim-float-9 rounded-2xl p-5 cursor-pointer relative group overflow-hidden border border-pink-400/20" onclick="openPersonalCard('Thảo Vy', '🌻 Thông Minh &amp; Tràn Đầy Sức Sống', 'Chúc Thảo Vy ngày 20/10 thật rực rỡ và đong đầy yêu thương! Chúc bạn luôn tươi vui, thông minh, tràn đầy năng lượng tích cực và luôn tỏa sáng như đóa hướng dương hướng về ánh mặt trời.', 'fa-star', 'from-amber-400 to-pink-500')">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/30 transition-all"></div>
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300 border border-amber-400/30 group-hover:rotate-12 transition-transform">
+<i class="fa-solid fa-star"></i>
+</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-200">#09</span>
+</div>
+<div class="mt-4">
+<h3 class="text-xl md:text-2xl font-bold font-serif-title text-pink-100 group-hover:text-amber-300 transition-colors">Thảo Vy</h3>
+<p class="text-xs text-amber-200/80 mt-1 font-handwriting text-lg">Thông minh &amp; Sức sống</p>
+</div>
+<div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-pink-200/70 group-hover:text-white">
+<span>Chạm để nhận lời chúc</span>
+<i class="fa-solid fa-arrow-right text-pink-400 transform group-hover:translate-x-1 transition-transform"></i>
+</div>
+</div>
+</div>
+</section>
+<!-- Center Grand Gift Box Button -->
+<div class="text-center my-6 z-30">
+<button class="relative group px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white font-bold text-base md:text-lg shadow-xl shadow-pink-500/30 hover:shadow-pink-500/60 transform hover:-translate-y-1 active:scale-95 transition-all duration-300 flex items-center gap-3 mx-auto border border-white/30" id="openGeneralGiftBtn">
+<span class="absolute inset-0 rounded-full bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+<i class="fa-solid fa-gift text-2xl animate-bounce"></i>
+<span class="tracking-wide">MỞ HỘP QUÀ &amp; LỜI CHÚC YÊU THƯƠNG</span>
+<i class="fa-solid fa-sparkles text-amber-300"></i>
+</button>
+<p class="text-xs text-pink-300/60 mt-3 font-light">
+        🎁 Bấm vào để kích hoạt pháo hoa và nhận thông điệp chung dành cho cả 9 nàng thơ!
+      </p>
+</div>
+<!-- Footer info -->
+<footer class="text-center pt-6 pb-2 text-pink-300/50 text-xs">
+<p>Chúc mừng ngày Phụ nữ Việt Nam 20/10 • Thiết kế với tất cả sự trân trọng và yêu thương ❤️</p>
+</footer>
+</div>
+<!-- POPUP MODAL: Individual Card Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop opacity-0 pointer-events-none transition-all duration-300" id="personalModal">
+<div class="relative bg-gradient-to-b from-[#2a0e35] via-[#1c0825] to-[#12031a] border border-pink-400/40 rounded-3xl p-6 md:p-8 max-w-lg w-full text-center shadow-2xl shadow-pink-500/20 transform scale-95 transition-all duration-300" id="personalModalBox">
+<button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-pink-200 flex items-center justify-center transition-colors" onclick="closePersonalModal()">
+<i class="fa-solid fa-xmark text-lg"></i>
+</button>
+<div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center text-white text-2xl shadow-lg shadow-pink-500/40 mb-4 animate-bounce" id="modalIconWrap">
+<i class="fa-solid fa-heart" id="modalIcon"></i>
+</div>
+<span class="text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-400/30" id="modalTag">
+        Nàng Thơ
+      </span>
+<h3 class="font-serif-title text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-rose-300 to-amber-200 mt-3 mb-4" id="modalName">
+        Tên Người Nhận
+      </h3>
+<div class="p-4 rounded-2xl bg-white/5 border border-white/10 my-4 text-left">
+<p class="text-pink-100 text-sm md:text-base leading-relaxed font-light" id="modalWish">
+          Lời chúc chi tiết...
+        </p>
+</div>
+<div class="flex items-center justify-center gap-2 text-pink-300/70 text-xs">
+<i class="fa-solid fa-heart text-pink-400"></i>
+<span>Chúc bạn một ngày 20/10 ngập tràn nụ cười &amp; hạnh phúc!</span>
+</div>
+<button class="mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold text-sm shadow-md transition-all" onclick="triggerMiniConfetti(); closePersonalModal();">
+        Gửi Thêm Trái Tim Yêu Thương 💖
+      </button>
+</div>
+</div>
+<!-- POPUP MODAL: General Celebration Gift Box Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop opacity-0 pointer-events-none transition-all duration-300" id="generalGiftModal">
+<div class="relative bg-gradient-to-b from-[#340b3b] via-[#200727] to-[#120217] border-2 border-pink-400/50 rounded-3xl p-6 md:p-10 max-w-2xl w-full text-center shadow-2xl shadow-pink-500/30 transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto" id="generalModalBox">
+<button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-pink-200 flex items-center justify-center transition-colors" onclick="closeGeneralModal()">
+<i class="fa-solid fa-xmark text-lg"></i>
+</button>
+<div class="inline-block p-4 rounded-3xl bg-pink-500/20 border border-pink-400/40 text-amber-300 text-4xl mb-3 animate-pulse">
+        🎁✨🌸
+      </div>
+<h2 class="font-serif-title text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-rose-300 to-amber-200">
+        Gửi Trọn Yêu Thương Ngày 20/10
+      </h2>
+<p class="font-handwriting text-2xl md:text-3xl text-pink-300 mt-1">
+        Tới 9 Bông Hoa Xinh Đẹp Nhất
+      </p>
+<!-- 9 Tags pills -->
+<div class="flex flex-wrap items-center justify-center gap-2 my-5">
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">🌸 Bạch Lành</span>
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">✨ Phương Anh</span>
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">🎶 Dương Cầm</span>
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">💎 Bảo Châu</span>
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">🌺 Ly Na</span>
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">🌿 Đinh Duyên</span>
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">🌷 Bảo Thy</span>
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">✨ Huyền Trâm</span>
+<span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-200 text-xs border border-pink-400/30">🌻 Thảo Vy</span>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-pink-400/20 text-left text-pink-100 text-sm md:text-base leading-relaxed space-y-3 font-light">
+<p>
+          Nhân ngày <strong>Phụ Nữ Việt Nam 20/10</strong>, xin gửi tới 9 người phụ nữ tuyệt vời những lời chúc mừng chân thành và nồng thắm nhất!
+        </p>
+<p>
+          Cảm ơn các bạn vì đã luôn mang lại sự dịu dàng, thông minh, nguồn năng lượng tươi sáng và những nụ cười rạng rỡ cho cuộc sống mỗi ngày. Chúc cho mỗi bạn:
+        </p>
+<ul class="list-disc list-inside space-y-1 text-pink-200/90 pl-2">
+<li><strong>Mãi luôn xinh đẹp:</strong> Rạng ngời như hoa mùa xuân, tự tin với phong cách riêng của mình.</li>
+<li><strong>Luôn luôn hạnh phúc:</strong> Mỗi ngày thức dậy đều có niềm vui, được yêu thương và chiều chuộng.</li>
+<li><strong>Gặt hái thành công:</strong> Vạn sự hanh thông, công việc thăng tiến và ước mơ bay cao.</li>
+<li><strong>Bình an và yêu đời:</strong> Luôn giữ trọn nụ cười tươi tắn trên môi.</li>
+</ul>
+<p class="font-handwriting text-2xl text-center text-amber-200 pt-2">
+          "Phụ nữ sinh ra là để được yêu thương và trân trọng!" ❤️
+        </p>
+</div>
+<div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+<button class="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-amber-500 hover:from-pink-600 hover:to-amber-600 text-white font-semibold text-sm shadow-lg flex items-center justify-center gap-2" onclick="launchGrandFireworks();">
+<i class="fa-solid fa-fire text-amber-300"></i> Bắn Thêm Pháo Hoa Rực Rỡ
+        </button>
+<button class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-pink-200 font-medium text-sm transition-colors" onclick="closeGeneralModal();">
+          Đóng Hộp Quà
+        </button>
+</div>
+</div>
+</div>
+<script>
+    /* ========================================================
+       1. CANVAS ANIMATION: ROSE PETALS & GLOWING HEARTS
+    ======================================================== */
+    const canvas = document.getElementById('fallingCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const particles = [];
+    const particleCount = window.innerWidth < 768 ? 28 : 45;
+
+    class RomanticParticle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * width;
+        this.y = -20 - Math.random() * 50;
+        this.size = 8 + Math.random() * 14;
+        this.speedY = 1 + Math.random() * 2.2;
+        this.speedX = (Math.random() - 0.5) * 1.5;
+        this.rotation = Math.random() * 360;
+        this.rotSpeed = (Math.random() - 0.5) * 2;
+        this.opacity = 0.4 + Math.random() * 0.5;
+        this.type = Math.random() > 0.4 ? 'petal' : 'heart';
+        this.color = Math.random() > 0.5 ? '#ff4d88' : '#ff99bb';
+      }
+      update() {
+        this.y += this.speedY;
+        this.x += Math.sin(this.y * 0.02) + this.speedX;
+        this.rotation += this.rotSpeed;
+        if (this.y > height + 20) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        ctx.globalAlpha = this.opacity;
+
+        if (this.type === 'petal') {
+          // Draw soft petal
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.bezierCurveTo(this.size / 2, -this.size / 2, this.size, 0, 0, this.size);
+          ctx.bezierCurveTo(-this.size, 0, -this.size / 2, -this.size / 2, 0, 0);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        } else {
+          // Draw mini heart
+          const s = this.size * 0.6;
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.bezierCurveTo(-s, -s, -s * 1.5, s / 3, 0, s * 1.3);
+          ctx.bezierCurveTo(s * 1.5, s / 3, s, -s, 0, 0);
+          ctx.fillStyle = '#ff2a7a';
+          ctx.shadowColor = '#ff66a3';
+          ctx.shadowBlur = 6;
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      const p = new RomanticParticle();
+      p.y = Math.random() * height; // initial spread
+      particles.push(p);
+    }
+
+    function animateFalling() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateFalling);
+    }
+    animateFalling();
+
+    /* ========================================================
+       2. CLICK INTERACTION: HEARTS & FIREWORK POP
+    ======================================================== */
+    window.addEventListener('click', (e) => {
+      // Avoid triggering when clicking buttons or inside modal box
+      if (e.target.closest('#personalModalBox') || e.target.closest('#generalModalBox') || e.target.closest('#musicToggleBtn')) {
+        return;
+      }
+      spawnClickBurst(e.clientX, e.clientY);
+    });
+
+    const icons = ['💖', '🌸', '✨', '🌹', '💕', '⭐', '🌻'];
+    function spawnClickBurst(x, y) {
+      for (let i = 0; i < 6; i++) {
+        const el = document.createElement('div');
+        el.className = 'click-particle text-xl md:text-2xl';
+        el.innerText = icons[Math.floor(Math.random() * icons.length)];
+        el.style.left = `${x}px`;
+        el.style.top = `${y}px`;
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 30 + Math.random() * 60;
+        const tx = Math.cos(angle) * dist;
+        const ty = Math.sin(angle) * dist - 30;
+
+        el.animate([
+          { transform: 'translate(-50%, -50%) scale(0.3)', opacity: 1 },
+          { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(1.4)`, opacity: 0 }
+        ], {
+          duration: 750 + Math.random() * 300,
+          easing: 'cubic-bezier(0.15, 0.85, 0.35, 1.2)'
+        });
+
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1000);
+      }
+    }
+
+    /* ========================================================
+       3. MODAL HANDLERS FOR INDIVIDUAL CARDS
+    ======================================================== */
+    const personalModal = document.getElementById('personalModal');
+    const personalModalBox = document.getElementById('personalModalBox');
+    const modalName = document.getElementById('modalName');
+    const modalTag = document.getElementById('modalTag');
+    const modalWish = document.getElementById('modalWish');
+    const modalIcon = document.getElementById('modalIcon');
+
+    function openPersonalCard(name, tag, wish, iconClass, gradient) {
+      modalName.innerText = name;
+      modalTag.innerText = tag;
+      modalWish.innerText = wish;
+      modalIcon.className = `fa-solid ${iconClass}`;
+      
+      personalModal.classList.remove('opacity-0', 'pointer-events-none');
+      personalModalBox.classList.remove('scale-95');
+      personalModalBox.classList.add('scale-100');
+
+      // Mini sweet confetti
+      triggerMiniConfetti();
+    }
+
+    function closePersonalModal() {
+      personalModal.classList.add('opacity-0', 'pointer-events-none');
+      personalModalBox.classList.add('scale-95');
+      personalModalBox.classList.remove('scale-100');
+    }
+
+    /* ========================================================
+       4. GRAND GENERAL GIFT BOX MODAL & CONFETTI
+    ======================================================== */
+    const generalGiftModal = document.getElementById('generalGiftModal');
+    const generalModalBox = document.getElementById('generalModalBox');
+    const openGeneralGiftBtn = document.getElementById('openGeneralGiftBtn');
+
+    openGeneralGiftBtn.addEventListener('click', () => {
+      generalGiftModal.classList.remove('opacity-0', 'pointer-events-none');
+      generalModalBox.classList.remove('scale-95');
+      generalModalBox.classList.add('scale-100');
+      launchGrandFireworks();
+    });
+
+    function closeGeneralModal() {
+      generalGiftModal.classList.add('opacity-0', 'pointer-events-none');
+      generalModalBox.classList.add('scale-95');
+      generalModalBox.classList.remove('scale-100');
+    }
+
+    // Confetti / Fireworks via Canvas-Confetti
+    function triggerMiniConfetti() {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 40,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#ff4d88', '#ff99bb', '#ffd166', '#ffffff']
+        });
+      }
+    }
+
+    function launchGrandFireworks() {
+      if (typeof confetti !== 'function') return;
+
+      const duration = 3.5 * 1000;
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 10000 };
+
+      const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+        const particleCount = 50 * (timeLeft / duration);
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+      }, 250);
+    }
+
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    /* ========================================================
+       5. BACKGROUND MUSIC SYNTHESIZER (LOFI PIANO MELODY)
+       Using Web Audio API so it plays on any browser without CDN block
+    ======================================================== */
+    let audioCtx = null;
+    let isPlaying = false;
+    let musicInterval = null;
+
+    const musicToggleBtn = document.getElementById('musicToggleBtn');
+    const musicIcon = document.getElementById('musicIcon');
+    const musicLabel = document.getElementById('musicLabel');
+
+    // Soft gentle pentatonic chords for dreamy 20/10 vibes
+    const melodyNotes = [
+      261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 
+      659.25, 587.33, 523.25, 440.00, 392.00, 329.63
+    ];
+
+    function playSoftNote(freq, duration = 1.6) {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+        // Soft envelope (gentle attack and warm release)
+        gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.2);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    function startRomanticMusic() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      isPlaying = true;
+      musicLabel.innerText = "ĐANG PHÁT NHẠC DU DƯƠNG";
+      musicIcon.className = "fa-solid fa-volume-high text-pink-400";
+
+      let step = 0;
+      musicInterval = setInterval(() => {
+        const note = melodyNotes[step % melodyNotes.length];
+        playSoftNote(note, 2.0);
+        if (step % 2 === 0) {
+          playSoftNote(note * 0.5, 2.8); // gentle bass harmonic
+        }
+        step++;
+      }, 700);
+    }
+
+    function stopRomanticMusic() {
+      isPlaying = false;
+      if (musicInterval) clearInterval(musicInterval);
+      musicLabel.innerText = "BẬT NHẠC DU DƯƠNG";
+      musicIcon.className = "fa-solid fa-volume-xmark text-pink-400";
+    }
+
+    musicToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!isPlaying) {
+        startRomanticMusic();
+      } else {
+        stopRomanticMusic();
+      }
+    });
+
+    // Close modals with Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closePersonalModal();
+        closeGeneralModal();
+      }
+    });
+  </script>
+</body></html>
